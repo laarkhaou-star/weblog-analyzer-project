@@ -9,7 +9,7 @@ public class LogAnalyzer
 {
     public static final int HOURS_PER_DAY = 24;
     // Where to calculate the hourly access counts.
-    private int[] hourCounts;
+    private int[] hourCounts ;
     // Use a LogfileReader to access the data.
     private LogfileReader reader;
 
