@@ -5,6 +5,7 @@
  * @author David J. Barnes and Michael Kölling.
  * @version 7.0
  */
+//q1: busiest tiems of the day: from 10 to 18
 public class LogAnalyzer
 {
     public static final int HOURS_PER_DAY = 24;
@@ -61,5 +62,48 @@ public class LogAnalyzer
     public void printData()
     {
         reader.printData();
+    }
+    //q6,q7
+    public int numberOfAccess(){
+        int total = 0;
+        for (int i = 0; i < hourCounts.length; i++) {
+            total += hourCounts[i];
+        }
+
+        return total;
+    }
+    //q8
+    public int busiestHour(){
+        int max = 0;
+        for(int i = 0; i < hourCounts.length; i++){
+            if(hourCounts[i] > hourCounts[0]){
+                max = i;
+            }
+        }
+        return max;
+    }
+    //q9
+    public int quiestestHour(){
+        int lowest = hourCounts[0];
+        for(int i = 0; i < hourCounts.length; i++){
+            if(hourCounts[i] < lowest){
+                lowest = hourCounts[i];
+            }
+        }
+        return lowest;
+    }
+    //q10 : 23
+    //q11
+    public int busiestTwoHourPeriod() {
+        int busiest = 0;
+
+        for (int i = 0; i < hourCounts.length - 1; i++) {
+            if (hourCounts[i] + hourCounts[i + 1] >
+            hourCounts[busiest] + hourCounts[busiest + 1]) {
+                busiest = i;
+            }
+        }
+
+        return busiest;
     }
 }
