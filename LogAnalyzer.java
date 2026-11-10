@@ -97,7 +97,7 @@ public class LogAnalyzer
     public int busiestTwoHourPeriod() {
         int busiest = 0;
 
-        for (int i = 0; i < hourCounts.length - 1; i++) {
+        for (int i = 0; i < hourCounts.length; i++) {
             if (hourCounts[i] + hourCounts[i + 1] >
             hourCounts[busiest] + hourCounts[busiest + 1]) {
                 busiest = i;
